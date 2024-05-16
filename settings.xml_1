@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+   <profiles>
+      <profile>
+         <id>thirdparty</id>
+         <repositories>
+            <repository>
+               <id>atlassian</id>
+               <url>https://maven.atlassian.com/content/groups/public</url>
+            </repository>
+         </repositories>
+      </profile>
+      <profile>
+         <id>sportsbet</id>
+         <repositories>
+            <!-- 10.105.140.11 resides within PaddyPower's network -->
+<!--            <repository>
+               <id>paddypower</id>
+               <url>http://10.105.140.11:8081/nexus/content/groups/public</url>
+               <releases>
+                  <enabled>true</enabled>
+               </releases>
+               <snapshots>
+                  <enabled>true</enabled>
+               </snapshots>
+            </repository>
+-->
+            <repository>
+               <id>sportsbet</id>
+               <url>https://nexus.sbetcorp.com.au/content/groups/public</url>
+               <releases>
+                  <enabled>true</enabled>
+               </releases>
+               <snapshots>
+                  <enabled>true</enabled>
+               </snapshots>
+            </repository>
+         </repositories>
+      </profile>
+      <profile>
+         <id>automation-nexus</id>
+         <repositories />
+      </profile>
+      <profile>
+         <id>sportsbet-nexus</id>
+         <repositories>
+            <repository>
+               <id>sportsbet-nexus-release</id>
+               <url>https://nexus.sbetcorp.com.au/content/groups/public</url>
+               <releases>
+                  <enabled>true</enabled>
+               </releases>
+               <snapshots>
+                  <enabled>true</enabled>
+               </snapshots>
+            </repository>
+<!--            <repository>
+               <id>PP</id>
+               <url>http://10.105.140.11:8081/nexus/content/groups/public</url>
+            </repository> -->
+         </repositories>
+      </profile>
+      <profile>
+        <id>sb-central</id>
+        <repositories>
+          <repository>
+            <id>sb-central</id>
+            <url>https://nexus.sbetcorp.com.au/content/groups/sb-maven2</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+          </repository>
+        </repositories>
+       <pluginRepositories>
+          <pluginRepository>
+            <id>sb-central</id>
+            <url>https://nexus.sbetcorp.com.au/content/groups/sb-maven2</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+          </pluginRepository>
+        </pluginRepositories>
+      </profile>
+   </profiles>
+
+   <activeProfiles>
+      <activeProfile>sportsbet</activeProfile>
+      <activeProfile>thirdparty</activeProfile>
+      <activeProfile>sportsbet-nexus</activeProfile>
+      <activeProfile>sb-central</activeProfile>
+   </activeProfiles>
+</settings>
